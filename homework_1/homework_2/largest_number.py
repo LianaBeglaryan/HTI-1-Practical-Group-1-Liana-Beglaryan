@@ -1,4 +1,4 @@
-num=[int(num) for num in input("tpel tiv: ")]
+num=[int(num) for num in input("tpel tiv: ").split()]
 def largest_number(n):
     n_copy=n.copy()
     n_copy.sort()
