@@ -22,9 +22,9 @@ def guesser(guess_word,word,mistake_value):
                 guesser(mistake_value-1,guess_word,word)
 
             else:
-                def letter_count(word):
+                def letter_count(word): # այս ֆունկցիան հաշվում է թե քանի հատ կա այդ տառից բառի մեջ ու տեղադրում է դրանք '_'-երի փոխարեն
                     count=word.count(letter)
-                    while count>0:
+                    if count>0:
                         index=word.index(letter) 
                         guess_word_1=list(guess_word) 
                         guess_word_1[index]=letter
@@ -33,7 +33,7 @@ def guesser(guess_word,word,mistake_value):
                         letter_count(word[index:])
 
                     guesser(mistake_value,guess_word_1,word)
-
+                letter_count(word)
                 
 
         else: 
@@ -42,8 +42,8 @@ def guesser(guess_word,word,mistake_value):
     else:
         print("you lose the game")
 
-def main():
-    word = get_a_sentence()
+def main(): # ստեղ խնդիրներ առաջացան , բայց չեմ կարողացել լուծել դրանք
+    word = get_a_sentence() # ուզում էի random ընտրած բառը(word) փոխանցել guesser ֆունկցիային
     guess_word=len(word)*'_'
     guesser(5,guess_word,word)
 
